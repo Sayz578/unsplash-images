@@ -3,6 +3,7 @@ const AppContext = createContext()
 
 export const AppProvaider = ({children}) => {
     const [isDarkTheme, setIsDarkTheme] = useState(false)
+    const [serchTherm, setSerchTherm] = useState("dog")
 
     const toggleDarkTheme = () => {
         const newDarkTheme = !isDarkTheme
@@ -12,7 +13,7 @@ export const AppProvaider = ({children}) => {
     }
 
     return(
-        <AppContext.Provider value={{isDarkTheme, toggleDarkTheme}}>
+        <AppContext.Provider value={{isDarkTheme, toggleDarkTheme, serchTherm,setSerchTherm}}>
             {children}
         </AppContext.Provider>
     )
