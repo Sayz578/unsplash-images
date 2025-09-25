@@ -1,8 +1,11 @@
 import React from 'react'
+import ThemToggle from './components/ThemToggle'
 
 const App = () => {
   return (
-    <div>App</div>
+    <main>
+      <ThemToggle/>
+    </main>
   )
 }
 
