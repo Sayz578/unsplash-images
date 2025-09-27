@@ -1,0 +1,4 @@
+const fun = () => {}
+function name() {
+    
+}
