@@ -7,6 +7,12 @@ console.log(url);
 
 const Gallery = () => {
     const {serchTherm} = useGlobalContext()
+    const response = useQuery({
+      queryKey: ["images", serchTherm],
+      queryFn: async() => {
+        const result = await axios.get()
+      }
+    })
   return (
     <div>Gallery</div>
   )
