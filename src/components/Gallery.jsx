@@ -1,12 +1,15 @@
 import { useQuery } from "@tanstack/react-query"
 import { useGlobalContext } from "../context"
 import axios from "axios"
+import { useState } from "react"
 
-const url = `https://api.unsplash.com/search/photos?client_id=p_PHLxFf-E-LLzcKzjnzgv-fsC_3-rJpQxDFmE4FTMI&query=${serchTherm}`
-// console.log(url);
+const accessKey = "p_PHLxFf-E-LLzcKzjnzgv-fsC_3-rJpQxDFmE4FTMI"
+const perPage = 15
 
 const Gallery = () => {
+    const [page, setPage] = useState(1)
     const {serchTherm} = useGlobalContext()
+    const url = `https://api.unsplash.com/search/photos`
     const response = useQuery({
       queryKey: ["images", serchTherm],
       queryFn: async() => {
@@ -48,7 +51,7 @@ const Gallery = () => {
     }
   return (
     <section className="image-container">
-          {resalts.map((item) => {
+          {resalts.map((item, index) => {
             // console.log(item?.urls?.regular);
             const url = item?.urls?.regular
             return <img src={url} key={`${item.id}-${index}`} alt={item.alt_description} className="img"/>
