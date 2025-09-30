@@ -3,7 +3,7 @@ const AppContext = createContext()
 
 export const AppProvaider = ({children}) => {
     const [isDarkTheme, setIsDarkTheme] = useState(false)
-    const [serchTherm, setSerchTherm] = useState("dog")
+    const [serchTherm, setSerchTherm] = useState("car")
 
     const toggleDarkTheme = () => {
         const newDarkTheme = !isDarkTheme

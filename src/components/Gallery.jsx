@@ -77,7 +77,7 @@ const Gallery = () => {
         <span style={{ margin: "0 1rem" }}>Page {page}</span>
         <button className="btn"
           onClick={() => setPage(prev => prev + 1)}
-          disabled={page === 1}
+          disabled={page >= 3}
         >
           Next →
         </button>
